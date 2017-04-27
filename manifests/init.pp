@@ -8,7 +8,7 @@ class base_profile {
 
   user { 'elvis':
     ensure => present,
-    groups  => 'base_users',
+    groups => 'base_users',
   }
   group { 'base_users':
     ensure => present,
@@ -17,6 +17,7 @@ class base_profile {
     ensure => 'directory',
   }
   package { 'mysql':
-    ensure => latest,
+    ensure   => latest,
+    provider => 'chocolatey',
   }
 }
